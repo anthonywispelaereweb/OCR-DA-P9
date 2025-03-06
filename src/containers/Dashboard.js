@@ -146,6 +146,8 @@ export default class {
     }
 
     bills.forEach(bill => {
+      // Kill click event before add new one more 
+      $(`#open-bill${bill.id}`).off("click");
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
 
