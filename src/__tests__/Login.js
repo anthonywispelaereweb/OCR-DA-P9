@@ -54,6 +54,7 @@ describe("Given that I am a user on login page", () => {
       const inputData = {
         email: "johndoe@email.com",
         password: "azerty",
+        status: "connected"
       };
 
       const inputEmailUser = screen.getByTestId("employee-email-input");
