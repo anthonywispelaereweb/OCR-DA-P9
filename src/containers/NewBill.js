@@ -34,6 +34,7 @@ export default class NewBill {
     formData.append("file", file);
     formData.append("email", email);
 
+    // TODO 3 : [Bug report] - Bills
     this.fileValidation(file) &&
       this.store
         .bills()

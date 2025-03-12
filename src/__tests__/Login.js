@@ -229,3 +229,203 @@ describe("Given that I am a user on login page", () => {
     });
   });
 });
+
+describe("Given that I am testing the Login class", () => {
+  describe("When the login method is called with an existing store that fails", () => {
+    test("Then it should catch the error", () => {
+      document.body.innerHTML = LoginUI();
+      
+      const user = {
+        type: "Employee",
+        email: "johndoe@email.com",
+        password: "azerty",
+        status: "connected",
+      };
+      
+      // Mock localStorage
+      Object.defineProperty(window, "localStorage", {
+        value: {
+          getItem: jest.fn(() => null),
+          setItem: jest.fn(() => null),
+        },
+        writable: true,
+      });
+      
+      // Mock navigation
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname });
+      };
+      
+      let PREVIOUS_LOCATION = "";
+      
+      // Mock store with login method that rejects
+      const store = {
+        login: jest.fn().mockRejectedValue(new Error("Login failed")),
+      };
+      
+      const login = new Login({
+        document,
+        localStorage: window.localStorage,
+        onNavigate,
+        PREVIOUS_LOCATION,
+        store,
+      });
+      
+      // Mock createUser to resolve
+      login.createUser = jest.fn().mockResolvedValue({});
+      
+      // Test the login method fails but is caught
+      return login.login(user).catch(() => {
+        expect(store.login).toHaveBeenCalled();
+        expect(store.login).toHaveBeenCalledWith(JSON.stringify({
+          email: user.email,
+          password: user.password,
+        }));
+      });
+    });
+  });
+  
+  describe("When the login method is called with a null store", () => {
+    test("Then it should return null", () => {
+      document.body.innerHTML = LoginUI();
+      
+      const user = {
+        type: "Employee",
+        email: "johndoe@email.com",
+        password: "azerty",
+        status: "connected",
+      };
+      
+      // Mock localStorage
+      Object.defineProperty(window, "localStorage", {
+        value: {
+          getItem: jest.fn(() => null),
+          setItem: jest.fn(() => null),
+        },
+        writable: true,
+      });
+      
+      // Mock navigation
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname });
+      };
+      
+      let PREVIOUS_LOCATION = "";
+      
+      // Create login instance with null store
+      const login = new Login({
+        document,
+        localStorage: window.localStorage,
+        onNavigate,
+        PREVIOUS_LOCATION,
+        store: null,
+      });
+      
+      // Test login method returns null when store is null
+      const result = login.login(user);
+      expect(result).toBeNull();
+    });
+  });
+  
+  describe("When the createUser method is called with an existing store that fails", () => {
+    test("Then it should catch the error", () => {
+      document.body.innerHTML = LoginUI();
+      
+      const user = {
+        type: "Employee",
+        email: "johndoe@email.com",
+        password: "azerty",
+        status: "connected",
+      };
+      
+      // Mock localStorage
+      Object.defineProperty(window, "localStorage", {
+        value: {
+          getItem: jest.fn(() => null),
+          setItem: jest.fn(() => null),
+        },
+        writable: true,
+      });
+      
+      // Mock navigation
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname });
+      };
+      
+      let PREVIOUS_LOCATION = "";
+      
+      // Mock store with users.create method that rejects
+      const mockCreate = jest.fn().mockRejectedValue(new Error("Create user failed"));
+      const mockUsers = jest.fn().mockReturnValue({
+        create: mockCreate,
+      });
+      const store = {
+        users: mockUsers,
+      };
+      
+      const login = new Login({
+        document,
+        localStorage: window.localStorage,
+        onNavigate,
+        PREVIOUS_LOCATION,
+        store,
+      });
+      
+      // Test the createUser method fails
+      return login.createUser(user).catch(() => {
+        expect(store.users).toHaveBeenCalled();
+        expect(mockCreate).toHaveBeenCalledWith({
+          data: JSON.stringify({
+            type: user.type,
+            name: user.email.split('@')[0],
+            email: user.email,
+            password: user.password,
+          })
+        });
+      });
+    });
+  });
+  
+  describe("When the createUser method is called with a null store", () => {
+    test("Then it should return null", () => {
+      document.body.innerHTML = LoginUI();
+      
+      const user = {
+        type: "Employee",
+        email: "johndoe@email.com",
+        password: "azerty",
+        status: "connected",
+      };
+      
+      // Mock localStorage
+      Object.defineProperty(window, "localStorage", {
+        value: {
+          getItem: jest.fn(() => null),
+          setItem: jest.fn(() => null),
+        },
+        writable: true,
+      });
+      
+      // Mock navigation
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname });
+      };
+      
+      let PREVIOUS_LOCATION = "";
+      
+      // Create login instance with null store
+      const login = new Login({
+        document,
+        localStorage: window.localStorage,
+        onNavigate,
+        PREVIOUS_LOCATION,
+        store: null,
+      });
+      
+      // Test createUser method returns null when store is null
+      const result = login.createUser(user);
+      expect(result).toBeNull();
+    });
+  });
+});
+

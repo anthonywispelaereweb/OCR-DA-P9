@@ -147,6 +147,7 @@ export default class {
 
     bills.forEach(bill => {
       // Kill click event before add new one more 
+      // TODO 4 : [Bug report] - DashBoard
       $(`#open-bill${bill.id}`).off("click");
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
