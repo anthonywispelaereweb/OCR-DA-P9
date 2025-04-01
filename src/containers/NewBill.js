@@ -20,7 +20,14 @@ export default class NewBill {
   fileValidation = file => {
     const fileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
     let doc = this.document.querySelector(`input[data-testid="file"]`)
-    !fileTypes.includes(file.type) ? doc.classList.add("is-invalid") : doc.classList.remove("is-invalid");
+    if (!fileTypes.includes(file.type)) {
+      doc.classList.add("is-invalid");
+      doc.classList.remove("blue-border");;
+    } else {
+      doc.classList.remove("is-invalid");
+      doc.classList.add("blue-border");
+
+    }
     return fileTypes.includes(file.type);
   };
 

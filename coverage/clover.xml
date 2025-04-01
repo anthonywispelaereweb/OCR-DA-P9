@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1741790898688" clover="3.2.0">
-  <project timestamp="1741790898688" name="All files">
-    <metrics statements="236" coveredstatements="226" conditionals="95" coveredconditionals="85" methods="77" coveredmethods="66" elements="408" coveredelements="377" complexity="0" loc="236" ncloc="236" packages="4" files="17" classes="17"/>
+<coverage generated="1743495593951" clover="3.2.0">
+  <project timestamp="1743495593951" name="All files">
+    <metrics statements="240" coveredstatements="230" conditionals="95" coveredconditionals="85" methods="77" coveredmethods="66" elements="412" coveredelements="381" complexity="0" loc="240" ncloc="240" packages="4" files="17" classes="17"/>
     <package name="constants">
       <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
       <file name="routes.js" path="/Users/tonio/Code/OCR/formationDevAppJsReact/code/OCR-DA-P9/src/constants/routes.js">
@@ -24,7 +24,7 @@
       </file>
     </package>
     <package name="containers">
-      <metrics statements="182" coveredstatements="172" conditionals="59" coveredconditionals="49" methods="52" coveredmethods="41"/>
+      <metrics statements="186" coveredstatements="176" conditionals="59" coveredconditionals="49" methods="52" coveredmethods="41"/>
       <file name="Bills.js" path="/Users/tonio/Code/OCR/formationDevAppJsReact/code/OCR-DA-P9/src/containers/Bills.js">
         <metrics statements="24" coveredstatements="23" conditionals="6" coveredconditionals="4" methods="9" coveredmethods="8"/>
         <line num="7" count="20" type="stmt"/>
@@ -183,7 +183,7 @@
         <line num="13" count="2" type="stmt"/>
       </file>
       <file name="NewBill.js" path="/Users/tonio/Code/OCR/formationDevAppJsReact/code/OCR-DA-P9/src/containers/NewBill.js">
-        <metrics statements="37" coveredstatements="36" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="5"/>
+        <metrics statements="41" coveredstatements="40" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="5"/>
         <line num="6" count="23" type="stmt"/>
         <line num="7" count="23" type="stmt"/>
         <line num="8" count="23" type="stmt"/>
@@ -199,28 +199,32 @@
         <line num="21" count="9" type="stmt"/>
         <line num="22" count="9" type="stmt"/>
         <line num="23" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="24" count="9" type="stmt"/>
-        <line num="27" count="23" type="stmt"/>
-        <line num="28" count="8" type="stmt"/>
-        <line num="29" count="8" type="stmt"/>
-        <line num="30" count="8" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
-        <line num="32" count="8" type="stmt"/>
-        <line num="33" count="8" type="stmt"/>
-        <line num="34" count="8" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
+        <line num="34" count="23" type="stmt"/>
         <line num="35" count="8" type="stmt"/>
-        <line num="38" count="8" type="cond" truecount="2" falsecount="0"/>
-        <line num="48" count="5" type="stmt"/>
-        <line num="49" count="5" type="stmt"/>
-        <line num="50" count="5" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="55" count="23" type="stmt"/>
-        <line num="56" count="9" type="stmt"/>
-        <line num="57" count="9" type="stmt"/>
-        <line num="58" count="9" type="stmt"/>
-        <line num="77" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="78" count="4" type="stmt"/>
-        <line num="79" count="4" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
+        <line num="37" count="8" type="stmt"/>
+        <line num="38" count="8" type="stmt"/>
+        <line num="39" count="8" type="stmt"/>
+        <line num="40" count="8" type="stmt"/>
+        <line num="41" count="8" type="stmt"/>
+        <line num="42" count="8" type="stmt"/>
+        <line num="45" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="5" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="62" count="23" type="stmt"/>
+        <line num="63" count="9" type="stmt"/>
+        <line num="64" count="9" type="stmt"/>
+        <line num="65" count="9" type="stmt"/>
+        <line num="84" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="85" count="4" type="stmt"/>
+        <line num="86" count="4" type="stmt"/>
       </file>
     </package>
     <package name="utils">
@@ -235,8 +239,8 @@
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="4" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
-        <line num="41" count="3" type="stmt"/>
-        <line num="42" count="3" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
       </file>
